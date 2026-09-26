@@ -1,0 +1,29 @@
+# ── Kafka distribution ────────────────────────────────────────────────────────
+# Ignore the entire Kafka binary/distribution download
+kafka_2.13-4.3.1/
+kafka_2.13-4.3.1.tgz
+
+# ── Maven build output ────────────────────────────────────────────────────────
+**/target/
+
+# ── Java ──────────────────────────────────────────────────────────────────────
+*.class
+*.jar
+*.war
+*.ear
+
+# ── Kafka runtime data ────────────────────────────────────────────────────────
+# Broker logs / state directories
+kafka-logs/
+/tmp/kraft-combined-logs/
+/tmp/kafka-logs/
+*.sink.txt
+
+# ── OS / editor junk ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+*.iml
+.vscode/
