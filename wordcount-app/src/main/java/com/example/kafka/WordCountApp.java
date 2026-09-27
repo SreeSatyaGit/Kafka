@@ -46,6 +46,11 @@ public class WordCountApp {
                   Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG,
                   Serdes.String().getClass());
+        // Disable the state-store record cache so every processed record is
+        // forwarded immediately to the output topic.
+        // NOTE: CACHE_MAX_BYTES_BUFFERING_CONFIG was deprecated in Kafka 3.4;
+        //       STATESTORE_CACHE_MAX_BYTES_CONFIG is the current replacement.
+        props.put(StreamsConfig.STATESTORE_CACHE_MAX_BYTES_CONFIG, 0);
 
         // ------------------------------------------------------------------ //
         // 2. Topology                                                         //
